@@ -4,9 +4,65 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+        <style>
+            html {
+                overflow: hidden
+            }
+            body {
+                background-color: #f5f5dc;
+                font-family: 'Comic Sans MS', cursive, sans-serif;
+                text-align: center;
+                padding-top: 50px;
+                background-image: url('https://tgtg-mkt-cms-prod.s3.eu-west-1.amazonaws.com/40936/VKf09bTqDeaLnI88');
+                background-size: contain;
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            h1 {
+                color: #8b0000;
+                font-size: 3.5em;
+                text-shadow: 4px 4px #ffeb3b, -4px -4px #ffeb3b;
+                margin-top: 20px;
+            }
+
+            #fire-button {
+                background-color: #ff0000;
+                border: 3px solid #8b0000;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                font-size: 2em;
+                color: #fff;
+                text-shadow: 1px 1px #8b0000;
+                box-shadow: 0 5px #8b0000;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                margin-bottom: 20px;
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            #fire-button:hover {
+                background-color: #cc0000;
+                transform: scale(1.1) translateX(-50%);
+            }
+
+            #fire-button:active {
+                box-shadow: 0 2px #8b0000;
+                transform: translateY(4px) translateX(-50%);
+            }
+        </style>
         <title>POTATO CANNON</title>
     </head>
     <body>
-        <button hx-get="/boom" hx-target="body">FIRE</button>
+        <h1>Potato Cannon Remote Detonator</h1>
+        <button id="fire-button" hx-get="/boom" hx-target="body">FIRE!</button>
     </body>
 </html>
